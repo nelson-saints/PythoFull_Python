@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import or_
 from ORM import Pessoa
 
 def RetornaSession():
@@ -17,9 +18,38 @@ def RetornaSession():
 
 session = RetornaSession()
 
-x = session.query(Pessoa).all()
-#x = session.query(Pessoa).filter(Pessoa.nome == 'nelson').filter(Pessoa.nome == 'nelson')
-x = session.query(Pessoa).filter_by(usuario = 'nelson', nome='nelson')
+#Inserindo dados na tabela ----
 
+# x = Pessoa(nome='teste',
+#            usuario='paulo',
+#            senha='8561253')
+
+# y = Pessoa(nome='amanda',
+#            usuario='carolina',
+#            senha='321654')
+
+# session.add_all([y])
+# session.rollback()
+
+
+#Select
+
+x = session.query(Pessoa).all()
+# for i in x:
+#     print(i.nome)
+
+#Operador AND
+##x = session.query(Pessoa).filter(Pessoa.nome == 'nelson').filter(Pessoa.usuario == 'nelson')
+# x = session.query(Pessoa).filter_by(usuario = 'nelson', nome = 'nelson')
+# for i in x:
+#     print(i.id)
+
+
+
+#Operador OR
+x = session.query(Pessoa).filter(or_(Pessoa.nome =='nelson', Pessoa.usuario == 'carolina')).all()
+print(x)
 for i in x:
     print(i.id)
+
+session.commit()
