@@ -61,7 +61,7 @@ def deletDados(tabela):
         print(f'Ocorreu um erro {e}')
 
 
-deletDados("teste")
+imprimeDados("teste")
 
 con.commit()
 con.close()

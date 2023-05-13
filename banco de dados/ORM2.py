@@ -47,9 +47,24 @@ x = session.query(Pessoa).all()
 
 
 #Operador OR
-x = session.query(Pessoa).filter(or_(Pessoa.nome =='nelson', Pessoa.usuario == 'carolina')).all()
-print(x)
-for i in x:
-    print(i.id)
+# x = session.query(Pessoa).filter(or_(Pessoa.nome =='nelson', Pessoa.usuario == 'carolina')).all()
+# print(x)
+# for i in x:
+#     print(i.id)
+
+
+# #Update
+# x = session.query(Pessoa).filter(Pessoa.id == 3).all()
+# x[0].nome = 'Gabriel'
+# x[0].senha = '1234'
+# print(x[0].id)
+
+
+# #Delete
+# x = session.query(Pessoa).filter(Pessoa.id == 3).delete() #Deleta toda linha
+
+# x = session.query(Pessoa).filter(Pessoa.id == 3).one()
+# session.delete(x) # deleta a linha digitada
+
 
 session.commit()
