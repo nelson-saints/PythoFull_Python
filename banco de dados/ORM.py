@@ -29,6 +29,7 @@ class Categoria(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     categoria = Column(String(50))
     
+    
 
 
 class Produto(Base):

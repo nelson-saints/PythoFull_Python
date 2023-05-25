@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import or_
 from ORM import Pessoa
+from ORM import Produto
 
 def RetornaSession():
     USUARIO = "root"
@@ -20,13 +21,14 @@ session = RetornaSession()
 
 #Inserindo dados na tabela ----
 
-# x = Pessoa(nome='teste',
-#            usuario='paulo',
-#            senha='8561253')
+x = Produto(id='1',
+            categoria='frios')
 
 # y = Pessoa(nome='amanda',
 #            usuario='carolina',
 #            senha='321654')
+
+
 
 # session.add_all([y])
 # session.rollback()
@@ -34,7 +36,7 @@ session = RetornaSession()
 
 #Select
 
-x = session.query(Pessoa).all()
+#x = session.query(Pessoa).all()
 # for i in x:
 #     print(i.nome)
 
