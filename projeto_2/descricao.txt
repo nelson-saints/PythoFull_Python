@@ -1,0 +1,26 @@
+Projeto Pratico
+
+Criar um sistema de login
+
+--> Cadastro precisa conter:
+ Nome
+ Email
+ Senha
+
+ Email não pode se repetir.
+ Senha precisa utilizar uma criptografia no banco
+ Utilize uma senha forte
+ Apresente os erros visiveis
+
+ --> Login 
+Usuario irá acessar o sistema utilizando:
+Email 
+Senha
+
+
+Utilizar as tecnologias:
+Python
+POO
+MVC
+Banco de dados
+ORM
