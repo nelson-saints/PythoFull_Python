@@ -14,6 +14,7 @@ def broadcast(sala, mensagem):
     for i in salas[sala]:
         if isinstance(mensagem, str):
             mensagem = mensagem.encode()
+            
         i.send(mensagem)
 
 def enviarMensagem(nome, sala, client):
@@ -32,5 +33,5 @@ while True:
     salas[sala].append(client)
     print(f'{nome} se conectou na sala {sala}! INFO {addr}')
     broadcast(sala, f'{nome}: Entrou na sala!\n')
-    Thread = threading.Thread(target=enviarMensagem, args=(nome, sala, client))
-    Thread.start()
+    thread = threading.Thread(target=enviarMensagem, args=(nome, sala, client))
+    thread.start()
